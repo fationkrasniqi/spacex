@@ -1,6 +1,14 @@
+
+
+
 .App {
+  display: grid;
+  grid-template-rows: repeat(2,1fr);
+justify-content: center;
+align-items: center;
   text-align: center;
 }
+
 
 
 

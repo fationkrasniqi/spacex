@@ -12,6 +12,7 @@ query GetSpaceMission($limit: Int!){
         ships{
             image
         }
+        id
 
     }
 }
