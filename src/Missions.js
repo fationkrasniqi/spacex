@@ -9,7 +9,7 @@ function Missions(props) {
   const [data, setData] = useState([]);
 
   const loadSpaceMission = async () => {
-    const spaceMissions = await SpaceMission.getSpaceMission(10);
+    const spaceMissions = await SpaceMission.getSpaceMissions(10);
     setData(spaceMissions);
   };
   useEffect(() => {
@@ -35,7 +35,7 @@ function Missions(props) {
         }}>SpaceX</h2>
       {data.map((item,index) =>
       <>
-<Link to={'/launched/' + item.id}>
+<Link to={'/launched/' + item.rocket.rocket.id}>
 <MDBCard key={index} style={{maxWidth: "42rem", maxHeight: "44rem", paddingBottom: "20px", marginBottom: "20px", marginRight: "5px"}}>
          <MDBCardImage src={item && item.ships[0] && item.ships[0].image
          ? item.ships[0].image : "https://www.universetoday.com/wp-content/uploads/2011/03/IMG_4650a_STS-133_Ken-Kremer.jpg"

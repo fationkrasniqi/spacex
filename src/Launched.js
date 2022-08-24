@@ -16,9 +16,11 @@ import {
 
 function Launched ()  {
     const [data, setData] = useState([]);
+    let { id } = useParams();
 
     const loadSpaceMission = async () => {
-      const spaceMissions = await SpaceMission.getSpaceMission(10);
+      console.log(id);
+      const spaceMissions = await SpaceMission.getRocket(id);
       setData(spaceMissions);
     };
     useEffect(() => {
@@ -26,11 +28,7 @@ function Launched ()  {
     },[]);
     console.log("data", data)
 
-
-    
-   
-
-  return (
+    return (
     <MDBContainer
       style={{
         margin: 'auto',

@@ -1,5 +1,5 @@
 import {ApolloClient, InMemoryCache} from '@apollo/client';
-import {GET_SPACE_MISSON} from "./queries"
+import {GET_SPACE_MISSONS, GET_ROCKET} from "./queries"
 
 export const apolloClient = new ApolloClient({
     uri: "https://api.spacex.land/graphql/",
@@ -8,11 +8,10 @@ export const apolloClient = new ApolloClient({
 });
 
 class SpaceService {
-    async getSpaceMission(limit = 10){
+    async getSpaceMissions(limit = 10){
         try {
-         
              const response = await apolloClient.query({
-                query: GET_SPACE_MISSON,
+                query: GET_SPACE_MISSONS,
                 variables: {limit}
              });
 
@@ -23,6 +22,22 @@ class SpaceService {
         }  catch(err) {
             throw err
         }
+    }
+
+    async getRocket(id){
+        try {
+            const response = await apolloClient.query({
+               query: GET_ROCKET,
+               variables: {id}
+            });
+
+            if(!response || !response.data ) 
+             throw new Error("")
+            return response.data.rocket
+
+       } catch(err) {
+            throw err
+       }
     }
 }
 
