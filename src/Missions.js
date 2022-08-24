@@ -37,11 +37,12 @@ function Missions(props) {
       <>
 <Link to={'/launched/' + item.rocket.rocket.id}>
 <MDBCard key={index} style={{maxWidth: "42rem", maxHeight: "44rem", paddingBottom: "20px", marginBottom: "20px", marginRight: "5px"}}>
-         <MDBCardImage src={item && item.ships[0] && item.ships[0].image
-         ? item.ships[0].image : "https://www.universetoday.com/wp-content/uploads/2011/03/IMG_4650a_STS-133_Ken-Kremer.jpg"
+         <MDBCardImage src={item.links.flickr_images.length > 0 ? item.links.flickr_images[0] :  "https://www.universetoday.com/wp-content/uploads/2011/03/IMG_4650a_STS-133_Ken-Kremer.jpg"
+        //  ? item.links.flickr_images[0] : "https://www.universetoday.com/wp-content/uploads/2011/03/IMG_4650a_STS-133_Ken-Kremer.jpg"
          }
          position="top"
          alt={item.mission_name}
+         style={{widows: 100,height: 500}}
          />
          <MDBCardBody>
           <MDBCardTitle>
