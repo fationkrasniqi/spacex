@@ -6,9 +6,13 @@ query GetSpaceMission($limit: Int!){
         launch_site{
             site_name_long
         }
+        links {
+            flickr_images
+          }
         rocket{
             rocket_name
         }
+       
         ships{
             image
         }
