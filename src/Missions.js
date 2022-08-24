@@ -19,8 +19,6 @@ function Missions(props) {
   return (
     <div className='container'>
     <MDBContainer style={{
-        display: "grid",
-        gridTemplateColumns: "resolvePath(1,2fr)",
       margin: "auto",
       padding: "15px",
       maxWidth: "720px",
@@ -31,13 +29,14 @@ function Missions(props) {
         <h2 style={{
           alignContent: "center",
           textAlign: "center",
-          paddingBottom: "100px"
+          paddingBottom: "50px"
         }}>SpaceX</h2>
       {data.map((item,index) =>
       <>
 <Link to={'/launched/' + item.rocket.rocket.id}>
-<MDBCard key={index} style={{maxWidth: "42rem", maxHeight: "44rem", paddingBottom: "20px", marginBottom: "20px", marginRight: "5px"}}>
-         <MDBCardImage src={item.links.flickr_images.length > 0 ? item.links.flickr_images[0] :  "https://www.universetoday.com/wp-content/uploads/2011/03/IMG_4650a_STS-133_Ken-Kremer.jpg"
+<MDBCard 
+key={index} style={{maxWidth: "42rem", maxHeight: "44rem", paddingBottom: "20px", marginBottom: "20px", marginRight: "5px", backgroundColor:"black"}}>
+         <MDBCardImage src={item.links.flickr_images.length > 0 ? item.links.flickr_images[0] :  "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2021/04/falcon_9_crew_dragon_getting_readied_for_the_launch_of_crew-23/23275313-2-eng-GB/Falcon_9_Crew_Dragon_getting_readied_for_the_launch_of_Crew-2_pillars.jpg"
         //  ? item.links.flickr_images[0] : "https://www.universetoday.com/wp-content/uploads/2011/03/IMG_4650a_STS-133_Ken-Kremer.jpg"
          }
          position="top"

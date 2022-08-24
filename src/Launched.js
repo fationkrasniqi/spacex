@@ -46,18 +46,19 @@ function Launched ()  {
             paddingBottom: '100px',
           }}
         >
-          SpaceX
+          SpaceX Rocket
         </h2>
        
           <>
             <MDBCard
              
               style={{
-                maxWidth: '22rem',
+                maxWidth: '42rem',
                 maxHeight: '44rem',
                 paddingBottom: '20px',
                 marginBottom: '20px',
                 marginRight: '5px',
+                backgroundColor: "black"
               }}
             >
               <MDBCardImage
@@ -67,9 +68,14 @@ function Launched ()  {
               />
               <MDBCardBody>
                 <MDBCardTitle>{data.name}</MDBCardTitle>
+                <MDBCardText>Country:  {data.country}</MDBCardText>
+
                 {/* <MDBCardText>{props.launch_site.site_name_long}</MDBCardText> */}
                 <MDBCardText>{data.description}</MDBCardText>
                 <MDBCardText>First Flight: {data.first_flight}</MDBCardText>
+                <MDBCardText>Cost per launch: {data.cost_per_launch}</MDBCardText>
+
+
 
 
               </MDBCardBody>
